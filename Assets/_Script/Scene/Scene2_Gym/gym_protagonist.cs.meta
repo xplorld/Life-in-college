@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0f439bb9c9dd6487a888e4efaf3685a5
+timeCreated: 1451703857
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - NPCtext: {instanceID: 0}
+  - TalkIcon: {fileID: 2800000, guid: 47cd024c40ec54ca199979308d862c77, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

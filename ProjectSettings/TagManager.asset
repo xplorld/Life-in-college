@@ -68,3 +68,6 @@ TagManager:
   - name: character
     uniqueID: 1585725235
     locked: 0
+  - name: protaganist
+    uniqueID: 594105737
+    locked: 0
