@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/_Scene/Scene/Scene_2_Gym_Start.unity
   - enabled: 1
     path: Assets/_Scene/Scene/Scene_3_Lake.unity
+  - enabled: 0
+    path: Assets/_Scene/Scene/Scene_4_Gym.unity
