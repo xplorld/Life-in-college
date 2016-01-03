@@ -15,3 +15,13 @@ EditorBuildSettings:
     path: Assets/_Scene/Scene/Scene_3_Lake.unity
   - enabled: 1
     path: Assets/_Scene/Scene/Scene_4_Gym.unity
+  - enabled: 0
+    path: Assets/_Scene/UI/UI_Option.unity
+  - enabled: 0
+    path: Assets/_Scene/UI/UI_Option_Achievement.unity
+  - enabled: 0
+    path: Assets/_Scene/UI/UI_Option_Attribute.unity
+  - enabled: 0
+    path: Assets/_Scene/UI/UI_Start.unity
+  - enabled: 0
+    path: Assets/_Scene/UI/UI_Start_Gallery.unity

@@ -5,39 +5,13 @@ public class UI_Option : MonoBehaviour {
 
 	public static global_data gd;
 
-	//public Texture button_attribute;
-	//public Texture button_achievement;
-	//public Texture button_task;
-	//public Texture button_option;
-	//public Texture[] button_menu;
-	//public Texture label_HP;
-	//public Texture label_clock;
-	//public Texture label_place;
-	public Rect button_attribute_pos;
-	public Rect button_achievement_pos;
-	public Rect button_task_pos;
-	public Rect button_option_pos;
-	public Rect button_menu_pos;
-	public Rect label_HP_pos;
-	public Rect label_clock_pos;
-	public Rect label_place_pos;
-
-	private float Width = Screen.width;
-	private float Height = Screen.height;
-	private float buttonWidth = Screen.width/4;
-	private float buttonHeight = Screen.width/4*122/500;
-	private float menuWidth = Screen.height/5;
-	private float menuHeight = Screen.height/9;
-	private float hpWidth = Screen.width/6;
-	private float hpHeight = Screen.width/20;
-	private float clockWidth = Screen.width/4;
-	private float clockHeight = Screen.width/25;
-	private float placeWidth = Screen.width/4;
-	private float placeHeight = Screen.width/25;
+	public string at = "Embed";
 
 	GUIStyle myButtonStyle0;
 	GUIStyle myButtonStyle1;
 	GUIStyle myButtonStyle2;
+	GUIStyle myBackgroundStyle;
+	GUIStyle myFrontgroundStyle;
 	Font myFont;
 
 	void Awake() {
@@ -46,6 +20,253 @@ public class UI_Option : MonoBehaviour {
 		Debug.Log(global_data.Time_Hour);
 		Debug.Log(global_data.Time_Minute);
 		Debug.Log(global_data.Place_Scene);
+	}
+
+	void UI_Option_Menu() {
+
+		Rect button_attribute_pos;
+		Rect button_achievement_pos;
+		Rect button_task_pos;
+		Rect button_option_pos;
+		Rect button_menu_pos;
+		Rect label_HP_pos;
+		Rect label_clock_pos;
+ 		Rect label_place_pos;
+		
+ 		float Width = Screen.width;
+ 		float Height = Screen.height;
+ 		float buttonWidth = Screen.width/4;
+ 		float buttonHeight = Screen.width/4*122/500;
+ 		float menuWidth = Screen.height/5;
+ 		float menuHeight = Screen.height/9;
+ 		float hpWidth = Screen.width/6;
+ 		float hpHeight = Screen.width/20;
+ 		float clockWidth = Screen.width/4;
+ 		float clockHeight = Screen.width/25;
+ 		float placeWidth = Screen.width/4;
+ 		float placeHeight = Screen.width/25;
+
+		GUI.Label (new Rect (-10, -10, Width + 10, Height + 10), "", myBackgroundStyle);
+
+		button_attribute_pos = new Rect(Width*3/8, Height*3/8, buttonWidth, buttonHeight);
+		if(GUI.Button (button_attribute_pos, "Attribute", myButtonStyle0)) {
+			Debug.Log ("press button_attribute");
+			at = "Attribute";
+		}
+
+		button_achievement_pos = new Rect(Width*3/8, Height*4/8, buttonWidth, buttonHeight);
+		if(GUI.Button (button_achievement_pos, "Achievement", myButtonStyle0)) {
+			Debug.Log ("press button_achievement");
+			at = "Achievement";
+		}
+		
+		button_task_pos = new Rect(Width*3/8, Height*5/8, buttonWidth, buttonHeight);
+		if(GUI.Button (button_task_pos, "Task", myButtonStyle0)) {
+			Debug.Log ("press button_task");
+		}
+		
+		button_option_pos = new Rect(Width*3/8, Height*6/8, buttonWidth, buttonHeight);
+		if(GUI.Button (button_option_pos, "Option", myButtonStyle0)) {
+			Debug.Log ("press button_option");
+			at = "Option";
+		}
+		
+		button_menu_pos = new Rect(Width*7/9, Height/10, menuWidth, menuHeight);
+		if(GUI.Button (button_menu_pos, "Back", myButtonStyle1)) {
+			Debug.Log ("press button_menu to back to other scene");
+			at = "Embed";
+		}
+		
+		label_clock_pos = new Rect(Width*3/8, Height/10, clockWidth, clockHeight);
+		string label_clock_print_str = "Day " + global_data.Time_Day + " " + global_data.Time_Hour + ":" + (global_data.Time_Minute<10 ? "0" : "" ) + global_data.Time_Minute;
+		GUI.Label (label_clock_pos, label_clock_print_str, myButtonStyle2);
+		
+		label_place_pos = new Rect(Width*3/8, Height/6, placeWidth, placeHeight);
+		string label_place_print_str = global_data.Place_Scene;
+		GUI.Label (label_place_pos, label_place_print_str, myButtonStyle2);
+		
+		label_HP_pos = new Rect(Width/10, Height/10, hpWidth, hpHeight);
+		string label_HP_print_str = "Stamina: " + global_data.Stamina + "/" + global_data.Stamina_Max;
+		GUI.Label (label_HP_pos, label_HP_print_str, myButtonStyle2);
+
+	}
+
+	void UI_Option_Attribute() {
+
+ 		float Width = Screen.width;
+ 		float Height = Screen.height;
+ 		float buttonWidth = Screen.width/3;
+ 		float buttonHeight = Screen.height*2/15;
+ 		float Height_Adjust = 0;
+		
+		Rect button_pos;
+
+		if (GUI.Button (new Rect (-10, -10, Width + 10, Height + 10), "", myBackgroundStyle)) {
+			at = "Menu";
+		}
+
+		button_pos = new Rect(Width*1/8, Height*3/13-Height_Adjust, buttonWidth, buttonHeight);
+		GUI.Label (button_pos,
+		            "体力" + "\n" +
+		            global_data.Stamina_Max,
+		            myButtonStyle2);
+		
+		button_pos = new Rect(Width*1/8, Height*5/13-Height_Adjust, buttonWidth, buttonHeight);
+		GUI.Label (button_pos,
+		            "学习" + "\n" +
+		            global_data.Learning,
+		            myButtonStyle2);
+		
+		button_pos = new Rect(Width*4/8, Height*3/13-Height_Adjust, buttonWidth, buttonHeight);
+		GUI.Label (button_pos,
+		            "社交" + "\n" +
+		            global_data.Socialization,
+		            myButtonStyle2);
+		
+		button_pos = new Rect(Width*4/8, Height*5/13-Height_Adjust, buttonWidth, buttonHeight);
+		GUI.Label (button_pos,
+		            "品味" + "\n" +
+		            global_data.Taste,
+		            myButtonStyle2);
+
+	}
+
+	void UI_Option_Achievement() {
+
+ 		float Width = Screen.width;
+ 		float Height = Screen.height;
+ 		float buttonWidth = Screen.width/3;
+ 		float buttonHeight = Screen.height*2/15;
+ 		float Height_Adjust = 0;
+		
+		Rect button_pos;
+
+		if (GUI.Button (new Rect (-10, -10, Width + 10, Height + 10), "", myBackgroundStyle)) {
+			at = "Menu";
+		}
+
+		for(int i=0;i!=5;++i) {
+			
+			button_pos = new Rect(Width*1/8, Height*(1+2*i)/13-Height_Adjust, buttonWidth, buttonHeight);
+			
+			if (global_data.Achievement_Now[i] == -1) {
+				GUI.Label (button_pos,
+				            global_data.Achievement_title[i] + "（尚未启动）\n" +
+				            global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i],
+				            myButtonStyle2);
+			} else if (global_data.Achievement_Now[i] < 20) {
+				GUI.Label (button_pos,
+				            global_data.Achievement_title[i] + "（进行中）\n" +
+				            global_data.Achievement_content_head[i] + global_data.Achievement_Now[i] + "/" + global_data.Achievement_content_tail[i],
+				            myButtonStyle2);
+			} else {
+				GUI.Label (button_pos,
+				            global_data.Achievement_title[i] + "（完成）\n" +
+				            global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i],
+				            myButtonStyle2);
+			}
+			
+		}
+		
+		for(int i=5;i!=global_data.Achievement_Count;++i) {
+			
+			button_pos = new Rect(Width*4/8, Height*(1+2*(i-5))/13-Height_Adjust, buttonWidth, buttonHeight);
+			
+			if (global_data.Achievement_Now[i] == -1) {
+				GUI.Label (button_pos,
+				            global_data.Achievement_title[i] + "（尚未启动）\n" +
+				            global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i],
+				            myButtonStyle2);
+			} else if (global_data.Achievement_Now[i] < 20) {
+				GUI.Label (button_pos,
+				            global_data.Achievement_title[i] + "（进行中）\n" +
+				            global_data.Achievement_content_head[i] + global_data.Achievement_Now[i] + "/" + global_data.Achievement_content_tail[i],
+				            myButtonStyle2);
+			} else {
+				GUI.Label (button_pos,
+				            global_data.Achievement_title[i] + "（完成）\n" +
+				            global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i],
+				            myButtonStyle2);
+			}
+			
+		}
+
+	}
+
+	void UI_Option_Embed() {
+
+		Rect button_menu_pos;
+		Rect label_HP_pos;
+		Rect label_clock_pos;
+		Rect label_place_pos;
+		
+ 		float Width = Screen.width;
+ 		float Height = Screen.height;
+ 		float menuWidth = Screen.height/5;
+ 		float menuHeight = Screen.height/9;
+ 		float hpWidth = Screen.width/6;
+ 		float hpHeight = Screen.width/20;
+ 		float clockWidth = Screen.width/4;
+ 		float clockHeight = Screen.width/25;
+ 		float placeWidth = Screen.width/4;
+ 		float placeHeight = Screen.width/25;
+
+		button_menu_pos = new Rect(Width*7/9, Height/10, menuWidth, menuHeight);
+		if(GUI.Button (button_menu_pos, "Menu", myButtonStyle1)) {
+			Debug.Log ("press button_menu to back to other scene");
+			Debug.Log ("at = " + at);
+			at = "Menu";
+		}
+		
+		label_clock_pos = new Rect(Width*3/8, Height/10, clockWidth, clockHeight);
+		string label_clock_print_str = "Day " + global_data.Time_Day + " " + global_data.Time_Hour + ":" + (global_data.Time_Minute<10 ? "0" : "" ) + global_data.Time_Minute;
+		GUI.Label (label_clock_pos, label_clock_print_str, myButtonStyle2);
+		
+		label_place_pos = new Rect(Width*3/8, Height/6, placeWidth, placeHeight);
+		string label_place_print_str = global_data.Place_Scene;
+		GUI.Label (label_place_pos, label_place_print_str, myButtonStyle2);
+
+		label_HP_pos = new Rect(Width/10, Height/10, hpWidth, hpHeight);
+		string label_HP_print_str = "Stamina: " + global_data.Stamina + "/" + global_data.Stamina_Max;
+		GUI.Label (label_HP_pos, label_HP_print_str, myButtonStyle2);
+
+	}
+
+	void UI_Option_Option() {
+
+		float Width = Screen.width;
+		float Height = Screen.height;
+
+		GUI.Label (new Rect (-10, -10, Width + 10, Height + 10), "", myBackgroundStyle);
+
+		if (global_data.openBGM == true) {
+			if (GUI.Button (getPos (200,200,100,40), "关掉音乐", myButtonStyle0)) {
+				global_data.openBGM = false;
+			}
+		} else {
+			if (GUI.Button (getPos (200,200,100,40), "开启音乐", myButtonStyle0)) {
+				global_data.openBGM = true;
+			}
+		}
+		
+		if (global_data.openSCM == true) {
+			if (GUI.Button (getPos (200,300,100,40), "关掉音效", myButtonStyle0)) {
+				global_data.openSCM = false;
+			}
+		} else {
+			if (GUI.Button (getPos (200,300,100,40), "开启音效", myButtonStyle0)) {
+				global_data.openSCM = true;
+			}
+		}
+
+		if (GUI.Button (new Rect (-10, -10, Width + 10, Height + 10), "", myFrontgroundStyle)) {
+			at = "Menu";
+		}
+
+	}
+
+	Rect getPos(float myCenterWidth, float myCenterHeight, float myWidth, float myHeight) {
+		return new Rect (myCenterWidth - myWidth / 2, myCenterHeight - myHeight / 2, myWidth, myHeight);
 	}
 
 	void OnGUI () {
@@ -65,46 +286,37 @@ public class UI_Option : MonoBehaviour {
 		myButtonStyle2.fontSize = 15;
 		myButtonStyle2.font = myFont;
 
-		button_attribute_pos = new Rect(Width*3/8, Height*3/8, buttonWidth, buttonHeight);
-		if(GUI.Button (button_attribute_pos, "Attribute", myButtonStyle0)) {
-			Debug.Log ("press button_attribute");
-			Application.LoadLevel("UI_Option_Attribute");
+		myBackgroundStyle = new GUIStyle (GUI.skin.button);
+		myFrontgroundStyle = new GUIStyle (GUI.skin.label);
+
+		string st = "";
+		switch (at) {
+		case "Embed":
+			st += "Embed, ";
+			UI_Option_Embed();
+			break;
+		case "Menu":
+			st += "Menu, ";
+			UI_Option_Menu();
+			break;
+		case "Attribute":
+			st += "Attr, ";
+			UI_Option_Attribute();
+			break;
+		case "Achievement":
+			st += "Achi, ";
+			UI_Option_Achievement();
+			break;
+		case "Option":
+			st += "Option, ";
+			UI_Option_Option();
+			break;
+		default:
+			st += "default!";
+			Debug.Log ("default!!!");
+			break;
 		}
-
-
-		button_achievement_pos = new Rect(Width*3/8, Height*4/8, buttonWidth, buttonHeight);
-		if(GUI.Button (button_achievement_pos, "Achievement", myButtonStyle0)) {
-			Debug.Log ("press button_achievement");
-			Application.LoadLevel("UI_Option_Achievement");
-		}
-
-		button_task_pos = new Rect(Width*3/8, Height*5/8, buttonWidth, buttonHeight);
-		if(GUI.Button (button_task_pos, "Task", myButtonStyle0)) {
-			Debug.Log ("press button_task");
-		}
-
-		button_option_pos = new Rect(Width*3/8, Height*6/8, buttonWidth, buttonHeight);
-		if(GUI.Button (button_option_pos, "Option", myButtonStyle0)) {
-			Debug.Log ("press button_option");
-		}
-
-		button_menu_pos = new Rect(Width*7/9, Height/10, menuWidth, menuHeight);
-		if(GUI.Button (button_menu_pos, "Back", myButtonStyle1)) {
-			Debug.Log ("press button_menu to back to other scene");
-		}
-	
-		label_clock_pos = new Rect(Width*3/8, Height/10, clockWidth, clockHeight);
-		string label_clock_print_str = "Day " + global_data.Time_Day + " " + global_data.Time_Hour + ":" + (global_data.Time_Minute<10 ? "0" : "" ) + global_data.Time_Minute;
-		GUI.Button (label_clock_pos, label_clock_print_str, myButtonStyle2);
-
-		label_place_pos = new Rect(Width*3/8, Height/6, placeWidth, placeHeight);
-		string label_place_print_str = global_data.Place_Scene;
-		GUI.Button (label_place_pos, label_place_print_str, myButtonStyle2);
-
-		label_HP_pos = new Rect(Width/10, Height/10, hpWidth, hpHeight);
-		string label_HP_print_str = "体力值: " + global_data.Stamina + "/" + global_data.Stamina_Max;
-		GUI.Button (label_HP_pos, label_HP_print_str, myButtonStyle2);
-
+		Debug.Log (st);
 	}
 	
 	// Use this for initialization

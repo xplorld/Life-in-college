@@ -39,6 +39,9 @@ public class global_data : MonoBehaviour {
 	static public bool[] Gallery_Have;
 	static public Texture[] Gallery_Picture;
 
+	static public bool openBGM;
+	static public bool openSCM;
+
 	static public global_data Instance {
 		get {
 			Debug.Log("in get of Instance");
@@ -55,7 +58,7 @@ public class global_data : MonoBehaviour {
 
 					Debug.Log("init data!");
 
-					Gallery_Count = 16;
+					Gallery_Count = 14;
 					Gallery_Have = new bool[Gallery_Count];
 					Gallery_Picture = new Texture[Gallery_Count];
 
