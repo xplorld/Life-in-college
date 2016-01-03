@@ -65,8 +65,7 @@ public class gym_teacher : MonoBehaviour {
 			spriteRenderer.sprite = direction[0];
 			Time.timeScale = 0;
 			dialogIndex ++ ;
-			
-			
+
 			if(dialogIndex == 7){
 				isTalk = false;
 				Time.timeScale = 1;
@@ -75,7 +74,6 @@ public class gym_teacher : MonoBehaviour {
 			else{
 				NPCtext.text = dialog[dialogIndex];	
 			}
-			
 		}
 	}
 	

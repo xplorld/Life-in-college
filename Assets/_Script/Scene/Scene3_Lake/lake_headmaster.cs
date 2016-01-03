@@ -12,11 +12,18 @@ public class lake_headmaster : MonoBehaviour {
 	
 	//dialog
 	private string[] dialog_roommate_study = {
-		"路人乙：下雨又不代表就不能着火，\n" +
-		"看来这位同学你是没有做过GRE的Argument写作吧，\n" +
-		"说出来的话都是illogical的。\n" +
-		"我对你将来的英语水平考试非常之担心啊。",
-		"我：听起来像是个学霸。"
+		"校长：小伙子，你有什么事吗？" ,
+		"我：请问您是校长吗？",
+		"校长：小伙子你真是慧眼如炬啊，没错我就是这个学校最帅的男人——校长了。" ,
+		"我：（这个蜀黍有点奇怪）",
+		"校长：小伙子你有什么事么？",
+		"我：哦对了，体育馆着火了，校长您快想想办法吧。",
+		"校长：什么？！我的最心爱的体育馆居然着火了？",
+		"我：是的，老师都在那等着您的指示呢。",
+		"校长：看来只能报警了。",
+		"我：！校长您真是机智！",
+		"校长：哈哈哈，是不是折服于我的美貌和智慧之下了？",
+		"校长：走吧，我们一起去现场吧～"
 	};
 	//current index
 	private int dialogIndex ;
@@ -63,11 +70,12 @@ public class lake_headmaster : MonoBehaviour {
 			dialogIndex ++ ;
 			
 			
-			if(dialogIndex == 2){
+			if(dialogIndex == 12){
 				isTalk = false;
 				Time.timeScale = 1;
 				dialogIndex = -1;
 				NPCtext.text = "";
+				Application.LoadLevel(3);
 			}
 			else{
 				NPCtext.text = dialog_roommate_study[dialogIndex];	
