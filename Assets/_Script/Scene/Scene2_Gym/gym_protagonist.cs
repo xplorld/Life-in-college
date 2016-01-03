@@ -32,17 +32,17 @@ public class gym_protagonist : MonoBehaviour {
 		"说出来的话都是illogical的。\n" +
 		"我对你将来的英语水平考试非常之担心啊。",
 		"我：（这两个人都是谁啊=。=）",
-		"我：看来是真的着火了！考虑怎么帮忙救火吧!\n" +
-		"可是我要怎么移动呢?",
+		"我：看来是真的着火了！考虑怎么帮忙救火吧!\n",
+		"我：可是我要怎么移动呢?",
 		"路人丙：哎呀！来到了新环境，连动都不会动了？\n",
 		"我：诶？",
 		"路人丙：还是我来告诉你吧。在这么大个学校里，行动是必须学会的！",
-		"按下【方向键】就可以四处走动了。",
-		"想要和我说话，就走到我面前按【空格键】！",
-		"就是这么简单有木有~\n" ,
-		"好了好了我还要看烟火呢~",
+		"路人丙：按下【方向键】就可以四处走动了。",
+		"路人丙：想要和我说话，就走到我面前按【空格键】！",
+		"路人丙：就是这么简单有木有~\n" ,
+		"路人丙：好了好了我还要看烟火呢~",
 		"我：（原来还有人跟我一样傻也以为这是烟火)\n" ,
-		"(不不不，看起来他应该比我要傻一点）"
+		"我：(不不不，看起来他应该比我要傻一点）"
 	};
 
 	//current index
@@ -146,6 +146,10 @@ public class gym_protagonist : MonoBehaviour {
 				}
 			}
 
+			if(rb.position.x<-9.0f){
+				Application.LoadLevel(2);//go to the next scene
+			}
+
 
 		} else {
 			//start
@@ -168,9 +172,9 @@ public class gym_protagonist : MonoBehaviour {
 						roommate_premature_turn_right = true;
 					} else if (dialogIndex == 3) {
 						roommate_study_turn_right = true;
-					} else if (dialogIndex == 6) {
+					} else if (dialogIndex == 7) {
 						roommate_stupid_turn_right = true;
-					} else if (dialogIndex == 15) {
+					} else if (dialogIndex == 16) {
 						isWalk = true;
 						isTalk = false;
 						standDirection = 1;
