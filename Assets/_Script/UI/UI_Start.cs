@@ -107,7 +107,6 @@ public class UI_Start : MonoBehaviour {
 
 		Rect button_Start_Game_pos;
  		Rect button_Load_Game_pos;
- 		Rect button_Options_pos;
  		Rect button_Gallery_pos;
  		Rect label_Title_pos;
 		
@@ -122,17 +121,14 @@ public class UI_Start : MonoBehaviour {
 		if (GUI.Button (button_Start_Game_pos, "Start Game", myButtonStyle1)) {
 			Debug.Log ("press button_Start_Game");
 			Start_Game();
+			Application.LoadLevel("Scene_1_Gate");
 		}
 		button_Load_Game_pos = new Rect(Width*3/8, Height*4/8, buttonWidth, buttonHeight);
 		if (GUI.Button (button_Load_Game_pos, "Load Game", myButtonStyle1)) {
 			Debug.Log ("press button_Load_Game");
 			Load_Game();
 		}
-		button_Options_pos = new Rect(Width*3/8, Height*5/8, buttonWidth, buttonHeight);
-		if (GUI.Button (button_Options_pos, "Options", myButtonStyle1)) {
-			Debug.Log ("press button_Options");
-		}
-		button_Gallery_pos = new Rect(Width*3/8, Height*6/8, buttonWidth, buttonHeight);
+		button_Gallery_pos = new Rect(Width*3/8, Height*5/8, buttonWidth, buttonHeight);
 		if (GUI.Button (button_Gallery_pos, "Gallery", myButtonStyle1)) {
 			Debug.Log ("press button_Gallery");
 			at = "Gallery";

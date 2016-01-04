@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class UI_Option : MonoBehaviour {
 
@@ -22,12 +23,97 @@ public class UI_Option : MonoBehaviour {
 		Debug.Log(global_data.Place_Scene);
 	}
 
+	void Save_Game() {
+
+		Debug.Log ("save data for this game");
+
+		StreamWriter sw = File.CreateText("save.txt");
+
+		sw.WriteLine (global_data.Stamina);
+		sw.WriteLine (global_data.Stamina_Max);
+		sw.WriteLine (global_data.Learning);
+		sw.WriteLine (global_data.Socialization);
+		sw.WriteLine (global_data.Taste);
+
+		sw.WriteLine (global_data.Relationship_Teacher);
+		sw.WriteLine (global_data.Relationship_Principle);
+		sw.WriteLine (global_data.Relationship_Roommate1);
+		sw.WriteLine (global_data.Relationship_Roommate2);
+		sw.WriteLine (global_data.Relationship_Roommate3);
+		sw.WriteLine (global_data.Relationship_Girlfriend1);
+		sw.WriteLine (global_data.Relationship_Girlfriend2);
+		sw.WriteLine (global_data.Relationship_Girlfriend3);
+		sw.WriteLine (global_data.Relationship_Girlfriend4);
+
+		sw.WriteLine (global_data.Time_Day);
+		sw.WriteLine (global_data.Time_Hour);
+		sw.WriteLine (global_data.Time_Minute);
+
+		sw.WriteLine (global_data.Place_Scene);
+		sw.WriteLine (global_data.Place_X);
+		sw.WriteLine (global_data.Place_Y);
+
+		for (int i=0; i!=global_data.Achievement_Count; ++i)
+			sw.WriteLine (global_data.Achievement_Now [i]);
+
+		sw.WriteLine (global_data.openBGM);
+		sw.WriteLine (global_data.openSCM);
+
+		sw.Close();
+
+	}
+
+	void Load_Game() {
+		
+		Debug.Log ("load data for old game");
+		
+		if (File.Exists ("save.txt")) {
+			StreamReader sr = File.OpenText("save.txt");
+			
+			global_data.Stamina = int.Parse(sr.ReadLine());
+			global_data.Stamina_Max = int.Parse(sr.ReadLine());
+			global_data.Learning = int.Parse(sr.ReadLine());
+			global_data.Socialization = int.Parse(sr.ReadLine());
+			global_data.Taste = int.Parse(sr.ReadLine());
+			
+			global_data.Relationship_Teacher = int.Parse(sr.ReadLine());
+			global_data.Relationship_Principle = int.Parse(sr.ReadLine());
+			global_data.Relationship_Roommate1 = int.Parse(sr.ReadLine());
+			global_data.Relationship_Roommate2 = int.Parse(sr.ReadLine());
+			global_data.Relationship_Roommate3 = int.Parse(sr.ReadLine());
+			global_data.Relationship_Girlfriend1 = int.Parse(sr.ReadLine());
+			global_data.Relationship_Girlfriend2 = int.Parse(sr.ReadLine());
+			global_data.Relationship_Girlfriend3 = int.Parse(sr.ReadLine());
+			global_data.Relationship_Girlfriend4 = int.Parse(sr.ReadLine());
+			
+			global_data.Time_Day = int.Parse(sr.ReadLine());
+			global_data.Time_Hour = int.Parse(sr.ReadLine());
+			global_data.Time_Minute = int.Parse(sr.ReadLine());
+			
+			global_data.Place_Scene = sr.ReadLine();
+			global_data.Place_X = int.Parse(sr.ReadLine());
+			global_data.Place_Y = int.Parse(sr.ReadLine());
+			
+			for(int i=0;i!=global_data.Achievement_Count;++i) global_data.Achievement_Now[i] = int.Parse(sr.ReadLine());
+			
+			global_data.openBGM = bool.Parse(sr.ReadLine());
+			global_data.openSCM = bool.Parse(sr.ReadLine());
+			
+			sr.Close();
+			Debug.Log ("load finish");
+		} else {
+			Debug.Log ("No old game can be load.");
+		}
+	}
+
 	void UI_Option_Menu() {
 
 		Rect button_attribute_pos;
 		Rect button_achievement_pos;
 		Rect button_task_pos;
 		Rect button_option_pos;
+		Rect button_save_pos;
+		Rect button_load_pos;
 		Rect button_menu_pos;
 		Rect label_HP_pos;
 		Rect label_clock_pos;
@@ -45,32 +131,45 @@ public class UI_Option : MonoBehaviour {
  		float clockHeight = Screen.width/25;
  		float placeWidth = Screen.width/4;
  		float placeHeight = Screen.width/25;
+		float adjust_w = 100;
 
 		GUI.Label (new Rect (-10, -10, Width + 10, Height + 10), "", myBackgroundStyle);
 
-		button_attribute_pos = new Rect(Width*3/8, Height*3/8, buttonWidth, buttonHeight);
+		button_attribute_pos = new Rect(Width*1/8+adjust_w, Height*3/8, buttonWidth, buttonHeight);
 		if(GUI.Button (button_attribute_pos, "Attribute", myButtonStyle0)) {
 			Debug.Log ("press button_attribute");
 			at = "Attribute";
 		}
 
-		button_achievement_pos = new Rect(Width*3/8, Height*4/8, buttonWidth, buttonHeight);
+		button_achievement_pos = new Rect(Width*5/8-adjust_w, Height*3/8, buttonWidth, buttonHeight);
 		if(GUI.Button (button_achievement_pos, "Achievement", myButtonStyle0)) {
 			Debug.Log ("press button_achievement");
 			at = "Achievement";
 		}
+
+		button_save_pos = new Rect(Width*1/8+adjust_w, Height*4/8, buttonWidth, buttonHeight);
+		if(GUI.Button (button_save_pos, "Save", myButtonStyle0)) {
+			Debug.Log ("press button_save");
+			Save_Game();
+		}
 		
-		button_task_pos = new Rect(Width*3/8, Height*5/8, buttonWidth, buttonHeight);
+		button_load_pos = new Rect(Width*5/8-adjust_w, Height*4/8, buttonWidth, buttonHeight);
+		if(GUI.Button (button_load_pos, "Load", myButtonStyle0)) {
+			Debug.Log ("press button_load");
+			Load_Game();
+		}
+	
+		button_task_pos = new Rect(Width*1/8+adjust_w, Height*5/8, buttonWidth, buttonHeight);
 		if(GUI.Button (button_task_pos, "Task", myButtonStyle0)) {
 			Debug.Log ("press button_task");
 		}
 		
-		button_option_pos = new Rect(Width*3/8, Height*6/8, buttonWidth, buttonHeight);
+		button_option_pos = new Rect(Width*5/8-adjust_w, Height*5/8, buttonWidth, buttonHeight);
 		if(GUI.Button (button_option_pos, "Option", myButtonStyle0)) {
 			Debug.Log ("press button_option");
 			at = "Option";
 		}
-		
+
 		button_menu_pos = new Rect(Width*7/9, Height/10, menuWidth, menuHeight);
 		if(GUI.Button (button_menu_pos, "Back", myButtonStyle1)) {
 			Debug.Log ("press button_menu to back to other scene");
