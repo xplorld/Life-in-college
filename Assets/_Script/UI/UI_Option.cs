@@ -370,6 +370,9 @@ public class UI_Option : MonoBehaviour {
 
 	void OnGUI () {
 
+		if (global_data.openUI == false)
+			return;
+
 		myFont = (Font)Resources.Load("Fonts/comic", typeof(Font));
 
 		myButtonStyle0 = new GUIStyle (GUI.skin.button);

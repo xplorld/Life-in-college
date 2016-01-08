@@ -42,6 +42,8 @@ public class global_data : MonoBehaviour {
 	static public bool openBGM;
 	static public bool openSCM;
 
+	static public bool openUI;
+
 	static public global_data Instance {
 		get {
 			Debug.Log("in get of Instance");
@@ -105,6 +107,8 @@ public class global_data : MonoBehaviour {
 					Achievement_title[8] = "获得路痴称号";
 					Achievement_content_head[8] = "调查路牌超过";
 					Achievement_content_tail[8] = "10次";
+
+					openUI = true;
 
 				}
 			}
