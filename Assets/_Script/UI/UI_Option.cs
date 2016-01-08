@@ -360,7 +360,6 @@ public class UI_Option : MonoBehaviour {
 
 	void OnGUI () {
 
-		Debug.Log ("openUI = " + global_data.openUI);
 		if (global_data.openUI == false)
 			return;
 

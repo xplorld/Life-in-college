@@ -53,10 +53,15 @@ public class gym_roommate_premature : MonoBehaviour {
 		}
 		//talk
 		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
+
+			//ui
 			isTalk = true;
 			global_data.openUI = false;
+			//direction
 			spriteRenderer.sprite = direction[0];
+			//pause
 			Time.timeScale = 0;
+			//dialog
 			dialogIndex ++ ;
 			
 			
@@ -65,6 +70,8 @@ public class gym_roommate_premature : MonoBehaviour {
 				global_data.openUI = true;
 				Time.timeScale = 1;
 				dialogIndex = -1;
+				//cost
+				global_data.addMinute(5);
 			}
 			else{
 				NPCtext.text = dialog[dialogIndex];	

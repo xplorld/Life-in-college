@@ -39,8 +39,11 @@ public class start_dialog : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) {
 			dialogIndex ++ ;
 			if(dialogIndex == 6){
+
+				global_data.addMinute(20);
+				global_data.subStamina(1);
+
 				Application.LoadLevel("Scene_2_Gym_Start");
-				Debug.Log("loadlevel:1");
 			}
 			else{
 				NPCtext.text = dialog[dialogIndex];	

@@ -30,8 +30,8 @@ public class UI_Start : MonoBehaviour {
 
 		Debug.Log ("init data for new game");
 
-		global_data.Stamina = 95;
-		global_data.Stamina_Max = 95;
+		global_data.Stamina = 30;
+		global_data.Stamina_Max = 30;
 		global_data.Learning = 95;
 		global_data.Socialization = 95;
 		global_data.Taste = 95;
@@ -47,7 +47,7 @@ public class UI_Start : MonoBehaviour {
 		global_data.Relationship_Girlfriend4 = 0;
 
 		global_data.Time_Day = 1;
-		global_data.Time_Hour = 15;
+		global_data.Time_Hour = 8;
 		global_data.Time_Minute = 0;
 
 		global_data.Place_Scene = "综合体育馆";

@@ -54,8 +54,10 @@ public class gym_girl_cold : MonoBehaviour {
 		}
 		//talk
 		if (distance_x < 2 && distance_x > -2f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 1.0f && distance_y>-1.0f) {
+			//ui
 			isTalk = true;
 			global_data.openUI = false;
+
 			//face to which direction
 			if(distance_x>0){
 				spriteRenderer.sprite = direction[1];
@@ -71,6 +73,8 @@ public class gym_girl_cold : MonoBehaviour {
 				global_data.openUI = true;
 				Time.timeScale = 1;
 				dialogIndex = -1;
+				//cost
+				global_data.addMinute(5);
 			}
 			else{
 				NPCtext.text = dialog[dialogIndex];	

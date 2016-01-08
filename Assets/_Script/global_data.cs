@@ -151,4 +151,21 @@ public class global_data : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	static public void addMinute(int minute){
+		//time ++
+		global_data.Time_Minute += minute;
+		if(global_data.Time_Minute>=60){
+			global_data.Time_Hour ++ ;
+			global_data.Time_Minute = global_data.Time_Minute%60;
+			if(global_data.Time_Hour>=24){
+				global_data.Time_Day++;
+				global_data.Time_Hour = global_data.Time_Hour%24;
+			}
+		}
+	}
+
+	static public void subStamina(int subStamina){
+		Stamina -= subStamina;
+	}
 }
