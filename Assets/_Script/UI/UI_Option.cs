@@ -250,13 +250,13 @@ public class UI_Option : MonoBehaviour {
 			
 			if (global_data.Achievement_Now[i] == -1) {
 				GUI.Label (button_pos,
-				            global_data.Achievement_title[i] + "（尚未启动）\n" +
-				            global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i],
+				            (global_data.Achievement_hide[i] ? "???\n" : (global_data.Achievement_title[i] + "（尚未启动）\n")) +
+				            (global_data.Achievement_hide[i] ? "???" : (global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i])),
 				            myButtonStyle2);
 			} else if (global_data.Achievement_Now[i] < 20) {
 				GUI.Label (button_pos,
 				            global_data.Achievement_title[i] + "（进行中）\n" +
-				            global_data.Achievement_content_head[i] + global_data.Achievement_Now[i] + "/" + global_data.Achievement_content_tail[i],
+				            (global_data.Achievement_hide[i] ? "???" : (global_data.Achievement_content_head[i] + global_data.Achievement_Now[i] + "/" + global_data.Achievement_content_tail[i])),
 				            myButtonStyle2);
 			} else {
 				GUI.Label (button_pos,
@@ -273,13 +273,13 @@ public class UI_Option : MonoBehaviour {
 			
 			if (global_data.Achievement_Now[i] == -1) {
 				GUI.Label (button_pos,
-				            global_data.Achievement_title[i] + "（尚未启动）\n" +
-				            global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i],
+				            (global_data.Achievement_hide[i] ? "???\n" : (global_data.Achievement_title[i] + "（尚未启动）\n")) +
+				            (global_data.Achievement_hide[i] ? "???" : (global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i])),
 				            myButtonStyle2);
 			} else if (global_data.Achievement_Now[i] < 20) {
 				GUI.Label (button_pos,
 				            global_data.Achievement_title[i] + "（进行中）\n" +
-				            global_data.Achievement_content_head[i] + global_data.Achievement_Now[i] + "/" + global_data.Achievement_content_tail[i],
+				            (global_data.Achievement_hide[i] ? "???" : (global_data.Achievement_content_head[i] + global_data.Achievement_Now[i] + "/" + global_data.Achievement_content_tail[i])),
 				            myButtonStyle2);
 			} else {
 				GUI.Label (button_pos,
