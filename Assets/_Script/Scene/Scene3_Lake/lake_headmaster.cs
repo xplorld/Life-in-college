@@ -75,7 +75,7 @@ public class lake_headmaster : MonoBehaviour {
 				Time.timeScale = 1;
 				dialogIndex = -1;
 				NPCtext.text = "";
-				Application.LoadLevel(3);
+				Application.LoadLevel("Scene_4_Gym");
 			}
 			else{
 				NPCtext.text = dialog_roommate_study[dialogIndex];	

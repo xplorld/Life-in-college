@@ -654,6 +654,7 @@ GameObject:
   - 4: {fileID: 670669082}
   - 212: {fileID: 670669083}
   - 114: {fileID: 670669084}
+  - 50: {fileID: 670669085}
   m_Layer: 0
   m_Name: protagonist
   m_TagString: Untagged
@@ -710,6 +711,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f499ce3f6c14014bd8db2e2ed1fcd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  right:
+  - {fileID: 21300012, guid: 209737a147e504347b2f796ac61c5386, type: 3}
+  - {fileID: 21300016, guid: 209737a147e504347b2f796ac61c5386, type: 3}
+  direction:
+  - {fileID: 21300002, guid: 209737a147e504347b2f796ac61c5386, type: 3}
+  - {fileID: 21300008, guid: 209737a147e504347b2f796ac61c5386, type: 3}
+  - {fileID: 21300014, guid: 209737a147e504347b2f796ac61c5386, type: 3}
+  - {fileID: 21300020, guid: 209737a147e504347b2f796ac61c5386, type: 3}
+  framesPerSecond: 8
+  speed: 0
+  standDirection: 0
+--- !u!50 &670669085
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670669081}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &671945147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,6 +1397,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07d93fae6c514e7a94cee693d0ac4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction:
+  - {fileID: 21300002, guid: 2fbda45b5954545c9a5afac67041920c, type: 3}
+  - {fileID: 21300008, guid: 2fbda45b5954545c9a5afac67041920c, type: 3}
+  - {fileID: 21300014, guid: 2fbda45b5954545c9a5afac67041920c, type: 3}
+  - {fileID: 21300020, guid: 2fbda45b5954545c9a5afac67041920c, type: 3}
 --- !u!1 &1493902972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,7 +1508,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1585725235
+  m_SortingLayerID: 594105737
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: 89a211eb5942e48818dfd662c0befbed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1507,14 +1540,9 @@ MonoBehaviour:
   - {fileID: 21300008, guid: 89a211eb5942e48818dfd662c0befbed, type: 3}
   - {fileID: 21300014, guid: 89a211eb5942e48818dfd662c0befbed, type: 3}
   - {fileID: 21300020, guid: 89a211eb5942e48818dfd662c0befbed, type: 3}
-  framesPerSecond: 8
+  framesPerSecond: 10
   speed: 0
   standDirection: 0
-  boundaryH:
-    xMin: 0
-    xMax: 0
-    yMin: 0
-    yMax: 0
   NPCtext: {fileID: 0}
   TalkIcon: {fileID: 2800000, guid: 47cd024c40ec54ca199979308d862c77, type: 3}
   isTalk: 0
@@ -1603,6 +1631,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1689797614}
   - 212: {fileID: 1689797613}
+  - 114: {fileID: 1689797615}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -1648,6 +1677,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1689797615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1689797612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01be771984b03438bb8ff228932d5d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  at: Embed
 --- !u!1 &1724918157
 GameObject:
   m_ObjectHideFlags: 0

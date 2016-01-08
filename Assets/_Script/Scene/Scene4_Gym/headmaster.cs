@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class headmaster : MonoBehaviour {
+	public static bool girl_cute_turn_down;
+	public static bool protagonist_turn_up;
+
 	//walking and moving
 	public Sprite[] left;
 	public Sprite[] right;
@@ -12,32 +15,24 @@ public class headmaster : MonoBehaviour {
 	public float framesPerSecond;
 	public float speed;
 	public int standDirection;
-	public BoundaryHorizontal boundaryH;
 	
 	//render
 	private SpriteRenderer spriteRenderer;
 	
 	//dialog
 	private string[] dialog = {
-		"我：哇！这就是体育馆啊！\n大白天的还放焰火啊~好漂亮~",
-		"路人甲：大白天做什么白日梦呢，\n没看见是着火了吗？",
-		"我：啊啊?今天不是还在下雨吗？",
-		"路人乙：下雨又不代表就不能着火，\n" +
-		"看来这位同学你是没有做过GRE的Argument写作吧，\n" +
-		"说出来的话都是illogical的。\n" +
-		"我对你将来的英语水平考试非常之担心啊。",
-		"我：（这两个人都是谁啊=。=）",
-		"我：看来是真的着火了！考虑怎么帮忙救火吧!\n",
-		"我：可是我要怎么移动呢?",
-		"路人丙：哎呀！来到了新环境，连动都不会动了？\n",
-		"我：诶？",
-		"路人丙：还是我来告诉你吧。在这么大个学校里，行动是必须学会的！",
-		"路人丙：按下【方向键】就可以四处走动了。",
-		"路人丙：想要和我说话，就走到我面前按【空格键】！",
-		"路人丙：就是这么简单有木有~\n" ,
-		"路人丙：好了好了我还要看烟火呢~",
-		"我：（原来还有人跟我一样傻也以为这是烟火)\n" ,
-		"我：(不不不，看起来他应该比我要傻一点）"
+		"老师：校长！您来了～",
+		"老师：刚刚消防队员才走，已经把火灭了。",
+		"我：啊，总算是大火扑灭了，我们也可以报道了~",
+		"校长：年轻人，这场大火的扑灭少不了你的功劳啊，谢谢你啊。",
+		"妹子【萌】：我的书包也找到了！谢谢你呀！",
+		"我：不不，都是靠机智的校长。",
+		"校长：不过呢，这个状况看来是没法报道了" ,
+		"校长：你们要不先回去把，等明天体育馆修复好了再来吧。" ,
+		"我和众人：好的" ,
+		"我：（明天就能修复好？R U kidding me?)" ,
+		"我：（早就听说校长是个神一样的人物，果然名不虚传啊)" ,
+		"我：（还是先去看看新室友们把^_^)"
 	};
 	
 	//current index
@@ -52,13 +47,10 @@ public class headmaster : MonoBehaviour {
 	public static bool isWalk;
 	// Use this for initialization
 	void Start () {
-		standDirection = 0;
+		girl_cute_turn_down = false;
+		protagonist_turn_up = false;
 
-		//boundary
-		boundaryH.xMin = -9.5f;
-		boundaryH.xMax = 10.5f;
-		boundaryH.yMax = -1.0f;
-		boundaryH.yMin = -2.0f;
+		standDirection = 0;
 		
 		//initialize if is walk or talk
 		isTalk = false;
@@ -81,70 +73,10 @@ public class headmaster : MonoBehaviour {
 	}
 	
 	void FixedUpdate(){
-		
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
-		
+
 		Rigidbody2D rb = GetComponent<Rigidbody2D> ();
 		rb.velocity = new Vector3 (0, 0, 0);
-		
-		
-		if (isWalk) {
-			//free to move
-			
-			int index = (int)(Time.timeSinceLevelLoad * framesPerSecond /(2.0f)); 
-			index = index % left.Length; 
-			
-			if (moveHorizontal != 0) {
-				Vector3 movement = new Vector3 (moveHorizontal, 0, 0);
-				rb.velocity = movement * speed;
-			} else if (moveVertical != 0) {
-				Vector3 movement = new Vector3 (0, moveVertical, 0);
-				rb.velocity = movement * speed;
-			}
-			
-			rb.position=new Vector3(
-				Mathf.Clamp(rb.position.x,boundaryH.xMin,boundaryH.xMax),
-				Mathf.Clamp(rb.position.y,boundaryH.yMin,boundaryH.yMax),
-				0.0f
-				);
-			
-			if (moveHorizontal > 0) {//right
-				spriteRenderer.sprite = right [index];
-				standDirection = 0;
-				
-			} else if (moveHorizontal < 0) {//left
-				spriteRenderer.sprite = left [index];
-				standDirection = 1;
-				
-			} else if(moveVertical>0){//up
-				spriteRenderer.sprite = up [index];
-				standDirection = 2;
-			}else if(moveVertical<0){//down
-				spriteRenderer.sprite = down [index];
-				standDirection = 3;
-			}
-			else {
-				if (standDirection==0) {//right
-					spriteRenderer.sprite = direction[ 2 ];
-				}
-				else if(standDirection==1){//left
-					spriteRenderer.sprite = direction[ 1 ];
-				}
-				else if(standDirection==2){//up
-					spriteRenderer.sprite = direction[ 3 ];
-				}
-				else if(standDirection==3){//down
-					spriteRenderer.sprite = direction[ 0 ];
-				}
-			}
-			
-			if(rb.position.x<-9.0f){
-				Application.LoadLevel(2);//go to the next scene
-			}
-			
-			
-		} else {
+
 			//start
 			if (rb.position.x < -2.5) {
 				Vector3 movement = new Vector3 (1, 0, 0);
@@ -161,26 +93,22 @@ public class headmaster : MonoBehaviour {
 			if (isTalk) {
 				if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0)) {
 					dialogIndex++;
-//					if (dialogIndex == 1) {
-//						roommate_premature_turn_right = true;
-//					} else if (dialogIndex == 3) {
-//						roommate_study_turn_right = true;
-//					} else if (dialogIndex == 7) {
-//						roommate_stupid_turn_right = true;
-//					} else if (dialogIndex == 16) {
-//						isWalk = true;
-//						isTalk = false;
-//						standDirection = 1;
-//						roommate_premature_turn_right = false;
-//						roommate_study_turn_right = false;
-//						roommate_stupid_turn_right = false;
-//						dialogIndex = 0;
-//					}
+					if (dialogIndex == 4) {
+						girl_cute_turn_down = true;
+					} else if (dialogIndex == 5) {
+						protagonist_turn_up = true;
+					} else if (dialogIndex == 6) {
+						spriteRenderer.sprite = direction[3];
+					} else if (dialogIndex == 12) {
+						isTalk = false;
+						standDirection = 1;
+						dialogIndex = 0;
+						Application.LoadLevel("Scene_5_Dom");
+					}
 					
 				}
 			}
 			
-		}
 	}
 	
 	// Update is called once per frame

@@ -147,7 +147,7 @@ public class gym_protagonist : MonoBehaviour {
 			}
 
 			if(rb.position.x<-9.0f){
-				Application.LoadLevel(2);//go to the next scene
+				Application.LoadLevel("Scene_3_Lake");//go to the next scene
 			}
 
 
