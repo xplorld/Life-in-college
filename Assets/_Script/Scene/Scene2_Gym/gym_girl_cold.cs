@@ -27,9 +27,9 @@ public class gym_girl_cold : MonoBehaviour {
 		spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
 		
 		protagonist = GameObject.Find ("protagonist");
-		
+
+		//talking
 		isTalk = false;
-		
 		//get text
 		NPCtext = GameObject.Find("Canvas/Text").GetComponent<Text>();
 		//text style initialize
@@ -55,6 +55,7 @@ public class gym_girl_cold : MonoBehaviour {
 		//talk
 		if (distance_x < 2 && distance_x > -2f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 1.0f && distance_y>-1.0f) {
 			isTalk = true;
+			global_data.openUI = false;
 			//face to which direction
 			if(distance_x>0){
 				spriteRenderer.sprite = direction[1];
@@ -67,6 +68,7 @@ public class gym_girl_cold : MonoBehaviour {
 
 			if(dialogIndex == 2){
 				isTalk = false;
+				global_data.openUI = true;
 				Time.timeScale = 1;
 				dialogIndex = -1;
 			}
@@ -78,6 +80,8 @@ public class gym_girl_cold : MonoBehaviour {
 	}
 	
 	void OnGUI() {
+
+
 		Rect backgroundRect=new Rect(Screen.width*(0.5f)/10,
 		                             Screen.height*6/11,
 		                             Screen.width*9/10,
@@ -88,6 +92,7 @@ public class gym_girl_cold : MonoBehaviour {
 		                       Screen.width*9/10-40,Screen.height*(4.5f)/11-60);
 		
 		if (isTalk) {//talk at start 
+
 			GUI.DrawTexture(backgroundRect,TalkIcon);
 			GUI.Label(textRect,NPCtext.text.ToString(),textStyle);
 		}

@@ -55,7 +55,7 @@ public class headmaster : MonoBehaviour {
 		//initialize if is walk or talk
 		isTalk = false;
 		isWalk = false;
-		
+		global_data.openUI = false;
 		//text style initialize
 		textStyle = new GUIStyle ();
 		textStyle.normal.background = null;
@@ -88,6 +88,7 @@ public class headmaster : MonoBehaviour {
 				spriteRenderer.sprite = direction [2];
 				NPCtext.text = dialog [dialogIndex];
 				isTalk = true;
+				global_data.openUI = false;
 			}
 			//talk at the beginning
 			if (isTalk) {
@@ -101,6 +102,7 @@ public class headmaster : MonoBehaviour {
 						spriteRenderer.sprite = direction[3];
 					} else if (dialogIndex == 12) {
 						isTalk = false;
+						global_data.openUI = true;
 						standDirection = 1;
 						dialogIndex = 0;
 						Application.LoadLevel("Scene_5_Dom");

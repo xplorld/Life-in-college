@@ -36,7 +36,6 @@ public class gym_teacher : MonoBehaviour {
 		protagonist = GameObject.Find ("protagonist");
 		
 		isTalk = false;
-		
 		//get text
 		NPCtext = GameObject.Find("Canvas/Text").GetComponent<Text>();
 		//text style initialize
@@ -62,12 +61,14 @@ public class gym_teacher : MonoBehaviour {
 		//talk
 		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
 			isTalk = true;
+			global_data.openUI = false;
 			spriteRenderer.sprite = direction[0];
 			Time.timeScale = 0;
 			dialogIndex ++ ;
 
 			if(dialogIndex == 7){
 				isTalk = false;
+				global_data.openUI = true;
 				Time.timeScale = 1;
 				dialogIndex = -1;
 			}

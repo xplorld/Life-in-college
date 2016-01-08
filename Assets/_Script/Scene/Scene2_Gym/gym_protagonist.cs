@@ -55,6 +55,7 @@ public class gym_protagonist : MonoBehaviour {
 	//if is talking and is walking
 	public bool isTalk;
 	public static bool isWalk;
+
 	// Use this for initialization
 	void Start () {
 		//boundary
@@ -66,7 +67,7 @@ public class gym_protagonist : MonoBehaviour {
 		//initialize if is walk or talk
 		isTalk = false;
 		isWalk = false;
-
+		global_data.openUI = false;
 		//text style initialize
 		textStyle = new GUIStyle ();
 		textStyle.normal.background = null;
@@ -163,6 +164,7 @@ public class gym_protagonist : MonoBehaviour {
 				spriteRenderer.sprite = direction [3];
 				NPCtext.text = dialog [dialogIndex];
 				isTalk = true;
+				global_data.openUI = false;
 			}
 			//talk at the beginning
 			if (isTalk) {
@@ -177,6 +179,7 @@ public class gym_protagonist : MonoBehaviour {
 					} else if (dialogIndex == 16) {
 						isWalk = true;
 						isTalk = false;
+						global_data.openUI = true;
 						standDirection = 1;
 						roommate_premature_turn_right = false;
 						roommate_study_turn_right = false;
@@ -192,8 +195,6 @@ public class gym_protagonist : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-
 	}
 
 	void OnGUI() {

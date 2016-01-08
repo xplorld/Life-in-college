@@ -43,7 +43,17 @@ public class global_data : MonoBehaviour {
 	static public bool openBGM;
 	static public bool openSCM;
 
-	static public bool openUI;
+	static private bool _openUI;
+	static public bool openUI {
+		get{
+			return _openUI;
+		}
+		set{
+			print("setting openUI to " + value);
+			_openUI = value;
+		}
+	}
+		
 
 	static public global_data Instance {
 		get {

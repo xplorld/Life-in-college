@@ -20,6 +20,7 @@ public class start_dialog : MonoBehaviour {
 	public Texture TalkIcon;
 	//talk flag
 	private bool isTalk;
+
 	// Use this for initialization
 	void Start () {
 		isTalk = true;

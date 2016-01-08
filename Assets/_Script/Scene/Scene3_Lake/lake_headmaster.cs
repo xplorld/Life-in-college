@@ -40,7 +40,7 @@ public class lake_headmaster : MonoBehaviour {
 		protagonist = GameObject.Find ("protagonist");
 		
 		isTalk = false;
-		
+		global_data.openUI = true;
 		//get text
 		NPCtext = GameObject.Find("Canvas/Text").GetComponent<Text>();
 		//text style initialize
@@ -65,6 +65,7 @@ public class lake_headmaster : MonoBehaviour {
 		//talk
 		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
 			isTalk = true;
+			global_data.openUI = false;
 			spriteRenderer.sprite = direction[0];
 			Time.timeScale = 0;
 			dialogIndex ++ ;
@@ -72,6 +73,7 @@ public class lake_headmaster : MonoBehaviour {
 			
 			if(dialogIndex == 12){
 				isTalk = false;
+				global_data.openUI = true;
 				Time.timeScale = 1;
 				dialogIndex = -1;
 				NPCtext.text = "";

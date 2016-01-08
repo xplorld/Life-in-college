@@ -4,8 +4,6 @@ using System.IO;
 
 public class UI_Option : MonoBehaviour {
 
-	public static global_data gd;
-
 	public string at = "Embed";
 
 	GUIStyle myButtonStyle0;
@@ -14,14 +12,6 @@ public class UI_Option : MonoBehaviour {
 	GUIStyle myBackgroundStyle;
 	GUIStyle myFrontgroundStyle;
 	Font myFont;
-
-	void Awake() {
-		gd = global_data.Instance;
-		Debug.Log(global_data.Time_Day);
-		Debug.Log(global_data.Time_Hour);
-		Debug.Log(global_data.Time_Minute);
-		Debug.Log(global_data.Place_Scene);
-	}
 
 	void Save_Game() {
 
@@ -370,6 +360,7 @@ public class UI_Option : MonoBehaviour {
 
 	void OnGUI () {
 
+		Debug.Log ("openUI = " + global_data.openUI);
 		if (global_data.openUI == false)
 			return;
 

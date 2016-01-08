@@ -33,7 +33,6 @@ public class gym_roommate_study : MonoBehaviour {
 		protagonist = GameObject.Find ("protagonist");
 	
 		isTalk = false;
-
 		//get text
 		NPCtext = GameObject.Find("Canvas/Text").GetComponent<Text>();
 		//text style initialize
@@ -62,6 +61,7 @@ public class gym_roommate_study : MonoBehaviour {
 		//talk
 		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
 			isTalk = true;
+			global_data.openUI = false;
 			spriteRenderer.sprite = direction[0];
 			Time.timeScale = 0;
 			dialogIndex ++ ;
@@ -69,6 +69,7 @@ public class gym_roommate_study : MonoBehaviour {
 				
 			if(dialogIndex == 2){
 				isTalk = false;
+				global_data.openUI = true;
 				Time.timeScale = 1;
 				dialogIndex = -1;
 			}
@@ -81,6 +82,7 @@ public class gym_roommate_study : MonoBehaviour {
 	}
 
 	void OnGUI() {
+
 		Rect backgroundRect=new Rect(Screen.width*(0.5f)/10,
 		                             Screen.height*6/11,
 		                             Screen.width*9/10,

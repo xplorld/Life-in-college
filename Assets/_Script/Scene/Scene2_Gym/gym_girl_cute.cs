@@ -54,7 +54,7 @@ public class gym_girl_cute : MonoBehaviour {
 		protagonist = GameObject.Find ("protagonist");
 		
 		isTalk = false;
-		
+
 		//get text
 		NPCtext = GameObject.Find("Canvas/Text").GetComponent<Text>();
 		//text style initialize
@@ -96,6 +96,7 @@ public class gym_girl_cute : MonoBehaviour {
 		}
 		else if ((dialogIndex!=1||dialogPart!=0)&&distance_x < 2.0f && distance_x > -2.0f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5&&distance_y>-0.5f) {
 			isTalk = true;
+			global_data.openUI = false;
 			//face to which direction
 			if(distance_x>0){
 				spriteRenderer.sprite = direction[1];
@@ -109,6 +110,7 @@ public class gym_girl_cute : MonoBehaviour {
 			
 			if((dialogPart == 1 && dialogIndex == dialog1.Length)||(dialogPart == 2 && dialogIndex == dialog2.Length)||(dialogPart == 3 && dialogIndex == dialog3.Length)){
 				isTalk = false;
+				global_data.openUI = true;
 				Time.timeScale = 1;
 				dialogIndex = -1;
 			}
