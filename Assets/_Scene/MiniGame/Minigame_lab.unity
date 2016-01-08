@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertexNumber: 100
-  lineWidth: .200000003
-  startPoint: {x: 0, y: 0}
-  endPoint: {x: 1, y: 0}
+  lineWidth: .0500000007
+  startPoint: {x: -6, y: 1}
+  endPoint: {x: -.200000003, y: 1}
   frequency: 1
   amplitude: 1
 --- !u!120 &148416631
@@ -483,9 +483,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertexNumber: 100
-  lineWidth: .200000003
-  startPoint: {x: 0, y: 0}
-  endPoint: {x: 1, y: 0}
+  lineWidth: .0500000007
+  startPoint: {x: -6, y: 1}
+  endPoint: {x: -.200000003, y: 1}
   frequency: 1
   amplitude: 1
 --- !u!120 &819495887
