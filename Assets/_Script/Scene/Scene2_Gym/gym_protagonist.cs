@@ -150,6 +150,7 @@ public class gym_protagonist : MonoBehaviour {
 			if(rb.position.x<-9.0f){
 				global_data.addMinute(20);
 				global_data.subStamina(1);
+				global_data.Place_Scene = "思远湖";
 				Application.LoadLevel("Scene_3_Lake");//go to the next scene
 			}
 

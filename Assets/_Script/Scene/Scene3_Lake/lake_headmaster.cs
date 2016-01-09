@@ -80,7 +80,7 @@ public class lake_headmaster : MonoBehaviour {
 
 				global_data.addMinute(20);
 				global_data.subStamina(1);
-
+				global_data.Place_Scene = "综合体育馆";
 				Application.LoadLevel("Scene_4_Gym");
 			}
 			else{
