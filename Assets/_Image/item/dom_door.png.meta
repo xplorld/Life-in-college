@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-guid: 971a3b4139ecbd7418bd434ebc6f4257
-labels:
-- Misc
-- Environment
-- Fantasy
-- Pixelart
-- Signpost
+guid: a609767a3968f4ee5a076be5643948c4
+timeCreated: 1452763228
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -31,10 +27,10 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -42,7 +38,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
