@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scene/Scene/Scene_0_Begin.unity
+  - enabled: 1
     path: Assets/_Scene/Scene/Scene_1_Gate.unity
   - enabled: 1
     path: Assets/_Scene/Scene/Scene_2_Gym_Start.unity
@@ -16,14 +18,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scene/Scene/Scene_1_Gate.unity
   - enabled: 0
+    path: Assets/_Scene/UI/UI_Start.unity
+  - enabled: 0
     path: Assets/_Scene/UI/UI_Option.unity
   - enabled: 0
     path: Assets/_Scene/UI/UI_Option_Achievement.unity
   - enabled: 0
     path: Assets/_Scene/UI/UI_Option_Attribute.unity
   - enabled: 0
-    path: Assets/_Scene/UI/UI_Start.unity
-  - enabled: 0
     path: Assets/_Scene/UI/UI_Start_Gallery.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scene/Scene/Scene_5_Dom.unity

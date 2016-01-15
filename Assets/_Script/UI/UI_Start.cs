@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+
+using UnityEngine;
 using System.Collections;
 using System.IO;
 
@@ -270,3 +272,5 @@ public class UI_Start : MonoBehaviour {
 		
 	}
 }
+
+#endif
