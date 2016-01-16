@@ -1,6 +1,4 @@
-﻿#if UNITY_EDITOR
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.IO;
 
@@ -115,9 +113,7 @@ public class UI_Start : MonoBehaviour {
  		float Height = Screen.height;
  		float buttonWidth = Screen.width/4;
  		float buttonHeight = Screen.width/4*122/500;
- 		float titleWidth = Screen.width/2;
- 		float titleHeight = Screen.width/10;
-
+ 		
 		button_Start_Game_pos = new Rect(Width*2/8, Height*5/8, buttonWidth, buttonHeight);
 		if (GUI.Button (button_Start_Game_pos, "Start Game", myButtonStyle1)) {
 			Debug.Log ("press button_Start_Game");
@@ -142,14 +138,24 @@ public class UI_Start : MonoBehaviour {
  		float Width = Screen.width;
  		float Height = Screen.height;
 
- 		Texture image_unknown = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/_Image/gallery/问号.jpg", typeof(Texture2D));
+		string image_unknown = "EMPTY";
+ 		//Texture image_unknown = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/_Image/gallery/问号.jpg", typeof(Texture2D));
 
 		if (gallery_now != -1) {
-			if (GUI.Button (getPos (Width / 2, Height / 2, Width + 5, Height + 5),
-			                global_data.Gallery_Have [gallery_now] ? global_data.Gallery_Picture [gallery_now] : image_unknown,
-			                myBackgroundStyle)) {
-				gallery_now = -1;
+			if (global_data.Gallery_Have [gallery_now]) {
+				if (GUI.Button (getPos (Width / 2, Height / 2, Width + 5, Height + 5),
+				                global_data.Gallery_Picture [gallery_now],
+				                myBackgroundStyle)) {
+					gallery_now = -1;
+				}
+			} else {
+				if (GUI.Button (getPos (Width / 2, Height / 2, Width + 5, Height + 5),
+				                image_unknown,
+				                myBackgroundStyle)) {
+					gallery_now = -1;
+				}
 			}
+
 			return;
 
 		} else {
@@ -161,32 +167,68 @@ public class UI_Start : MonoBehaviour {
 			float button_w = 500 * 0.618f;
 			float button_h = 500 * 0.382f;
 			if (gallery_page * 4 < global_data.Gallery_Count) {
-				if (GUI.Button (getPos (Width/2-adjust_w,Height/2-adjust_h,button_w,button_h),
-				                global_data.Gallery_Have[gallery_page*4] ? global_data.Gallery_Picture[gallery_page*4] : image_unknown,
-				                myButtonStyle2)) {
-					gallery_now = gallery_page * 4;
+				if (global_data.Gallery_Have[gallery_page*4]) {
+					if (GUI.Button (getPos (Width/2-adjust_w,Height/2-adjust_h,button_w,button_h),
+					                global_data.Gallery_Picture[gallery_page*4],
+					                myButtonStyle2)) {
+						gallery_now = gallery_page * 4;
+					}
+				} else {
+					if (GUI.Button (getPos (Width/2-adjust_w,Height/2-adjust_h,button_w,button_h),
+					                image_unknown,
+					                myButtonStyle2)) {
+						gallery_now = gallery_page * 4;
+					}
 				}
+
 			}
 			if (gallery_page * 4 + 1 < global_data.Gallery_Count) {
-				if (GUI.Button (getPos (Width/2-adjust_w,Height/2+adjust_h,button_w,button_h),
-				                global_data.Gallery_Have[gallery_page*4+1] ? global_data.Gallery_Picture[gallery_page*4+1] : image_unknown,
-				                myButtonStyle2)) {
-					gallery_now = gallery_page * 4 + 1;
+				if (global_data.Gallery_Have[gallery_page*4+1]) {
+					if (GUI.Button (getPos (Width/2-adjust_w,Height/2+adjust_h,button_w,button_h),
+					                global_data.Gallery_Picture[gallery_page*4+1],
+					                myButtonStyle2)) {
+						gallery_now = gallery_page * 4 + 1;
+					}
+				} else {
+					if (GUI.Button (getPos (Width/2-adjust_w,Height/2+adjust_h,button_w,button_h),
+					                image_unknown,
+					                myButtonStyle2)) {
+						gallery_now = gallery_page * 4 + 1;
+					}
 				}
+
 			}
 			if (gallery_page * 4 + 2 < global_data.Gallery_Count) {
-				if (GUI.Button (getPos (Width/2+adjust_w,Height/2-adjust_h,button_w,button_h),
-				                global_data.Gallery_Have[gallery_page*4+2] ? global_data.Gallery_Picture[gallery_page*4+2] : image_unknown,
-				                myButtonStyle2)) {
-					gallery_now = gallery_page * 4 + 2;
+				if (global_data.Gallery_Have[gallery_page*4+2]) {
+					if (GUI.Button (getPos (Width/2+adjust_w,Height/2-adjust_h,button_w,button_h),
+					                global_data.Gallery_Picture[gallery_page*4+2],
+					                myButtonStyle2)) {
+						gallery_now = gallery_page * 4 + 2;
+					}
+				} else {
+					if (GUI.Button (getPos (Width/2+adjust_w,Height/2-adjust_h,button_w,button_h),
+					                image_unknown,
+					                myButtonStyle2)) {
+						gallery_now = gallery_page * 4 + 2;
+					}
 				}
+
 			}
 			if (gallery_page * 4 + 3 < global_data.Gallery_Count) {
-				if (GUI.Button (getPos (Width/2+adjust_w,Height/2+adjust_h,button_w,button_h),
-				                global_data.Gallery_Have[gallery_page*4+3] ? global_data.Gallery_Picture[gallery_page*4+3] : image_unknown,
-				                myButtonStyle2)) {
-					gallery_now = gallery_page * 4 + 3;
+				if (global_data.Gallery_Have[gallery_page*4+3]) {
+					if (GUI.Button (getPos (Width/2+adjust_w,Height/2+adjust_h,button_w,button_h),
+					                global_data.Gallery_Picture[gallery_page*4+3],
+					                myButtonStyle2)) {
+						gallery_now = gallery_page * 4 + 3;
+					}
+				} else {
+					if (GUI.Button (getPos (Width/2+adjust_w,Height/2+adjust_h,button_w,button_h),
+					                image_unknown,
+					                myButtonStyle2)) {
+						gallery_now = gallery_page * 4 + 3;
+					}
 				}
+
 			}
 			
 			if (GUI.Button (getPos (Width/2-100,Height*9/10,60,30), "上一页", myButtonStyle2)) {
@@ -272,5 +314,3 @@ public class UI_Start : MonoBehaviour {
 		
 	}
 }
-
-#endif
