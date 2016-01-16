@@ -36,7 +36,8 @@ public class gym_protagonist : MonoBehaviour {
 		"我：可是我要怎么移动呢?",
 		"路人丙：哎呀！来到了新环境，连动都不会动了？\n",
 		"我：诶？",
-		"路人丙：还是我来告诉你吧。在这么大个学校里，行动是必须学会的！",
+		"路人丙：还是我来告诉你吧。在这么大个学校里，\n" +
+		"行动是必须学会的！",
 		"路人丙：按下【方向键】就可以四处走动了。",
 		"路人丙：想要和我说话，就走到我面前按【空格键】！",
 		"路人丙：就是这么简单有木有~\n" ,
@@ -72,7 +73,7 @@ public class gym_protagonist : MonoBehaviour {
 		textStyle = new GUIStyle ();
 		textStyle.normal.background = null;
 		textStyle.normal.textColor = new Color(1, 1, 1);
-		textStyle.fontSize = 40;
+		textStyle.fontSize = 30;
 
 		//some trigger point initialize
 		roommate_premature_turn_right = false;
@@ -171,7 +172,7 @@ public class gym_protagonist : MonoBehaviour {
 			}
 			//talk at the beginning
 			if (isTalk) {
-				if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0)) {
+				if (Input.GetKeyDown (KeyCode.Space)) {
 					dialogIndex++;
 					if (dialogIndex == 1) {
 						roommate_premature_turn_right = true;

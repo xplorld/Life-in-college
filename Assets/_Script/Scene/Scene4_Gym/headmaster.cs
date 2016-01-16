@@ -111,7 +111,7 @@ public class headmaster : MonoBehaviour {
 						global_data.addMinute(30);
 						global_data.subStamina(2);
 
-						Application.LoadLevel("Scene_0_Gate");
+						Application.LoadLevel("Scene_5_Dom");
 					}
 					
 				}
