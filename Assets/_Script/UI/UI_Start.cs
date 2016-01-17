@@ -96,6 +96,8 @@ public class UI_Start : MonoBehaviour {
 			global_data.openBGM = bool.Parse(sr.ReadLine());
 			global_data.openSCM = bool.Parse(sr.ReadLine());
 
+			Application.LoadLevel(global_data.current_scene);
+
 			sr.Close();
 			Debug.Log ("load finish");
 		} else {

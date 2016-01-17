@@ -63,6 +63,9 @@ public class scene5_dom_protagonist : MonoBehaviour {
 		
 		//render
 		spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
+
+		//save scene
+		global_data.current_scene = "Scene_5_Dom";
 	}
 	
 	void FixedUpdate(){

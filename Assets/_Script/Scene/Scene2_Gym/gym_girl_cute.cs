@@ -61,7 +61,7 @@ public class gym_girl_cute : MonoBehaviour {
 		textStyle = new GUIStyle ();
 		textStyle.normal.background = null;
 		textStyle.normal.textColor = new Color(1, 1, 1);
-		textStyle.fontSize = 40;
+		textStyle.fontSize = 30;
 		//index
 		dialogIndex = -1;
 	}
@@ -94,7 +94,7 @@ public class gym_girl_cute : MonoBehaviour {
 				NPCtext.text = dialog3[dialogIndex];
 			}
 		}
-		else if ((dialogIndex!=1||dialogPart!=0)&&distance_x < 2.0f && distance_x > -2.0f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5&&distance_y>-0.5f) {
+		else if ((dialogIndex!=1||dialogPart!=0)&&distance_x < 2.0f && distance_x > -2.0f && (Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5&&distance_y>-0.5f) {
 
 			//ui
 			isTalk = true;

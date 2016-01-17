@@ -47,7 +47,7 @@ public class lake_headmaster : MonoBehaviour {
 		textStyle = new GUIStyle ();
 		textStyle.normal.background = null;
 		textStyle.normal.textColor = new Color(1, 1, 1);
-		textStyle.fontSize = 40;
+		textStyle.fontSize = 30;
 		//index
 		dialogIndex = -1;
 	}
@@ -63,7 +63,7 @@ public class lake_headmaster : MonoBehaviour {
 	void Update () {
 		
 		//talk
-		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
+		if (distance_x < 0.5 && distance_x > -0.5f && ( Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
 			isTalk = true;
 			global_data.openUI = false;
 			spriteRenderer.sprite = direction[0];

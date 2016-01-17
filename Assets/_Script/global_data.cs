@@ -51,6 +51,9 @@ public class global_data : MonoBehaviour {
 	static public int teachBuilding;
 	static public int lake;
 
+	//scene
+	static public string current_scene;
+
 	static private bool _openUI;
 	
 	static public bool openUI {

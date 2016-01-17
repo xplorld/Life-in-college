@@ -49,6 +49,7 @@ public class UI_Option : MonoBehaviour {
 		sw.WriteLine (global_data.openBGM);
 		sw.WriteLine (global_data.openSCM);
 
+		sw.WriteLine (global_data.current_scene);
 		sw.Close();
 
 	}
@@ -88,7 +89,11 @@ public class UI_Option : MonoBehaviour {
 			
 			global_data.openBGM = bool.Parse(sr.ReadLine());
 			global_data.openSCM = bool.Parse(sr.ReadLine());
-			
+
+			global_data.current_scene = sr.ReadLine();
+
+			Application.LoadLevel(global_data.current_scene);
+
 			sr.Close();
 			Debug.Log ("load finish");
 		} else {

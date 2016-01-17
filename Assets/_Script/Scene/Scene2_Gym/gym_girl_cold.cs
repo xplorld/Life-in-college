@@ -36,7 +36,7 @@ public class gym_girl_cold : MonoBehaviour {
 		textStyle = new GUIStyle ();
 		textStyle.normal.background = null;
 		textStyle.normal.textColor = new Color(1, 1, 1);
-		textStyle.fontSize = 40;
+		textStyle.fontSize = 30;
 		//index
 		dialogIndex = -1;
 	}
@@ -53,7 +53,7 @@ public class gym_girl_cold : MonoBehaviour {
 			spriteRenderer.sprite = direction[2];		
 		}
 		//talk
-		if (distance_x < 2 && distance_x > -2f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 1.0f && distance_y>-1.0f) {
+		if (distance_x < 2 && distance_x > -2f && (Input.GetKeyDown (KeyCode.Space)) && distance_y < 1.0f && distance_y>-1.0f) {
 			//ui
 			isTalk = true;
 			global_data.openUI = false;

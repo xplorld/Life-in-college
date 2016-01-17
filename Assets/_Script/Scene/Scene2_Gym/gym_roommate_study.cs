@@ -39,7 +39,7 @@ public class gym_roommate_study : MonoBehaviour {
 		textStyle = new GUIStyle ();
 		textStyle.normal.background = null;
 		textStyle.normal.textColor = new Color(1, 1, 1);
-		textStyle.fontSize = 40;
+		textStyle.fontSize = 30;
 		//index
 		dialogIndex = -1;
 	}
@@ -59,7 +59,7 @@ public class gym_roommate_study : MonoBehaviour {
 		}
 
 		//talk
-		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
+		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
 
 			//ui
 			isTalk = true;

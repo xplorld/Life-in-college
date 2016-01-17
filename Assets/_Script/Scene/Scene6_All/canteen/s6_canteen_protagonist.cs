@@ -59,7 +59,8 @@ public class s6_canteen_protagonist : MonoBehaviour {
 		spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
 		
 		setPos = true;
-		
+		//save scene
+		global_data.current_scene = "Scene_6_Canteen";
 	}
 	
 	void FixedUpdate(){

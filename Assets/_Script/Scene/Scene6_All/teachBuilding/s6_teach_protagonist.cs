@@ -51,6 +51,9 @@ public class s6_teach_protagonist : MonoBehaviour {
 		spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
 		
 		setPos = true;
+
+		//save scene
+		global_data.current_scene = "Scene_6_TeachingBuilding";
 		
 	}
 	

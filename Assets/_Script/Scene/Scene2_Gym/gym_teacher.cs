@@ -59,7 +59,7 @@ public class gym_teacher : MonoBehaviour {
 			spriteRenderer.sprite = direction[2];		
 		}
 		//talk
-		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
+		if (distance_x < 0.5 && distance_x > -0.5f && (Input.GetKeyDown (KeyCode.Space)) && distance_y < 0.5) {
 
 			//ui
 			isTalk = true;

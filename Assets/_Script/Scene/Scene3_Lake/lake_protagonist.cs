@@ -31,6 +31,9 @@ public class lake_protagonist : MonoBehaviour {
 		
 		//render
 		spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
+
+		//save scene
+		global_data.current_scene = "Scene_3_Lake";
 	}
 
 	void FixedUpdate(){
