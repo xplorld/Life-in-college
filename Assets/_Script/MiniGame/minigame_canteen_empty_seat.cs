@@ -18,10 +18,10 @@ public class minigame_canteen_empty_seat: MonoBehaviour {
 			Rigidbody2D rigid = co.GetComponent<Rigidbody2D> ();
 			rigid.MovePosition (transform.position);
 			rigid.velocity = Vector2.zero;
-			Application.LoadLevel("Scene_Canteen");
+			Application.LoadLevel("Scene_6_Canteen");
 		} else {
-			Destroy(GetComponent<GameObject>());
-
+//			Destroy(co.GetComponent<GameObject>());
+			GetComponent<Collider2D>().enabled = false;
 		}
 	}
 }

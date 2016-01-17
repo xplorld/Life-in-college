@@ -66,12 +66,14 @@ public class AstarAI : MonoBehaviour
 			{
 				currentWaypoint++;
 			}
+			
+			GetComponent<Animator>().SetFloat("DirX", dir.x);
+			GetComponent<Animator>().SetFloat("DirY", dir.y);
+
 		}
 		dir *= speed * Time.fixedDeltaTime;
-		this.gameObject.transform.Translate( dir );
-		
-		GetComponent<Animator>().SetFloat("DirX", dir.x);
-		GetComponent<Animator>().SetFloat("DirY", dir.y);
+
+		transform.Translate( dir );
 
 	}
 }

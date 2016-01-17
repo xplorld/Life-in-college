@@ -152,6 +152,14 @@ public class s6_canteen_protagonist : MonoBehaviour {
 					global_data.lab = 0;
 					Application.LoadLevel ("Scene_6_Lab");//go to the next scene
 				}
+
+				if (rb.position.x > 2.5f && rb.position.x < 3.4f && rb.position.y > -1.55f) {
+					global_data.addMinute(20);
+					global_data.subStamina(-20); //+20 stamina
+					global_data.Place_Scene = "第 N 餐饮大楼·内部";
+					Application.LoadLevel("Minigame_canteen");
+
+				}
 			} 
 			
 		}

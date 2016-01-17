@@ -29,6 +29,8 @@ public class global_data : MonoBehaviour {
 	static public int Place_X;
 	static public int Place_Y;
 
+	static public int ball_shoot_count = 0;
+
 	static public int Achievement_Count;
 	static public int[] Achievement_Now;
 	static public string[] Achievement_title;
@@ -53,18 +55,7 @@ public class global_data : MonoBehaviour {
 
 	//scene
 	static public string current_scene;
-
-	static private bool _openUI;
-	
-	static public bool openUI {
-		get{
-			return _openUI;
-		}
-		set{
-			print("setting openUI to " + value);
-			_openUI = value;
-		}
-	}
+	static public bool openUI;
 		
 
 	static public global_data Instance {

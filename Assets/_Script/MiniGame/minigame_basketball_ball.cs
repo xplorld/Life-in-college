@@ -53,4 +53,9 @@ public class minigame_basketball_ball : MonoBehaviour {
 		Vector2 diff = pos - transform.position;
 		return diff;
 	}
+
+	void OnTriggerEnter2D(Collider2D co) {
+		global_data.ball_shoot_count += 1;
+
+	}
 }

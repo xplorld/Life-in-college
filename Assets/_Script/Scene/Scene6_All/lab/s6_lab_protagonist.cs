@@ -145,6 +145,12 @@ public class s6_lab_protagonist : MonoBehaviour {
 					global_data.gym = 1;
 					Application.LoadLevel ("Scene_6_Gym");//go to the next scene
 				}
+				if (rb.position.x > -0.2f && rb.position.x < 1.0f && rb.position.y > -2.1f) {
+					
+					global_data.addMinute (20);
+					global_data.subStamina (3);
+					Application.LoadLevel("Minigame_lab");
+				}
 			} 
 			
 		}

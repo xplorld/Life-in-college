@@ -9,6 +9,7 @@ public class minigame_lab_waveComparator : MonoBehaviour {
 			//tuning succeed!
 			wave1.lineColor = Color.red;
 			wave2.lineColor = Color.red;
+			Application.LoadLevel("Scene_6_Lab");
 		}
 	}
 }
