@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/_Scene/Scene/Scene_3_Lake.unity
   - enabled: 1
     path: Assets/_Scene/Scene/Scene_4_Gym.unity
+  - enabled: 1
+    path: Assets/_Scene/Scene/Scene_5_Dom.unity
+  - enabled: 1
+    path: Assets/_Scene/Scene/Scene_6_DomBuilding.unity
+  - enabled: 1
+    path: Assets/_Scene/Scene/Scene_6_Canteen.unity
+  - enabled: 1
+    path: Assets/_Scene/Scene/Scene_6_Lab.unity
+  - enabled: 1
+    path: Assets/_Scene/Scene/Scene_6_Gym.unity
+  - enabled: 0
+    path: Assets/_Scene/Scene/Scene_5_Dom.unity
   - enabled: 0
     path: Assets/_Scene/Scene/Scene_1_Gate.unity
   - enabled: 0
@@ -27,5 +39,3 @@ EditorBuildSettings:
     path: Assets/_Scene/UI/UI_Option_Attribute.unity
   - enabled: 0
     path: Assets/_Scene/UI/UI_Start_Gallery.unity
-  - enabled: 0
-    path: Assets/_Scene/Scene/Scene_5_Dom1.unity

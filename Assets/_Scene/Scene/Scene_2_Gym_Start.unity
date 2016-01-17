@@ -1144,7 +1144,7 @@ MonoBehaviour:
   - {fileID: 21300008, guid: 209737a147e504347b2f796ac61c5386, type: 3}
   - {fileID: 21300014, guid: 209737a147e504347b2f796ac61c5386, type: 3}
   - {fileID: 21300020, guid: 209737a147e504347b2f796ac61c5386, type: 3}
-  framesPerSecond: 8
+  framesPerSecond: 10
   speed: 0
   standDirection: 0
   boundaryH:

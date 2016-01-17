@@ -110,8 +110,9 @@ public class headmaster : MonoBehaviour {
 						//cost
 						global_data.addMinute(30);
 						global_data.subStamina(2);
-
+						
 						Application.LoadLevel("Scene_5_Dom");
+						global_data.Place_Scene = "寝室";
 					}
 					
 				}

@@ -43,7 +43,16 @@ public class global_data : MonoBehaviour {
 	static public bool openBGM;
 	static public bool openSCM;
 
+	//Scene switch position
+	static public int domBuilding;
+	static public int canteen;
+	static public int lab;
+	static public int gym;
+	static public int teachBuilding;
+	static public int lake;
+
 	static private bool _openUI;
+	
 	static public bool openUI {
 		get{
 			return _openUI;
@@ -136,6 +145,12 @@ public class global_data : MonoBehaviour {
 
 					openUI = true;
 
+					domBuilding = -1;
+					teachBuilding = -1;
+					lab = -1;
+					lake = -1;
+					gym = -1;
+					canteen = -1;
 				}
 			}
 			return _instance;

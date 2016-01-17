@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class gym_roommate_premature : MonoBehaviour {
+public class scene5_dom_roommate3 : MonoBehaviour {
 	public bool isTalk;
 	public Sprite[] direction;
 	private SpriteRenderer spriteRenderer;
@@ -12,8 +12,17 @@ public class gym_roommate_premature : MonoBehaviour {
 	
 	//dialog
 	private string[] dialog= {
-		"路人甲：没看见着火了么？快来一起帮忙！",
-		"我：这个人看着好成熟。"
+		"熟男：你好，我叫“熟男”，非常高兴。。",
+		"熟男：什么？！你这个小不点怎么也会在这个寝室！",
+		"我：什么小不点！我还想问你怎么会在这呢！",
+		"熟男：哼，这不是很明显么，我住在这啊。",
+		"熟男：你看，这里有我的床，我的椅子，还有我的钢琴。",
+		"我：不会吧。。你难道是我室友？",
+		"熟男：什么？你居然是我室友？",
+		"我：你要不要这么嫌弃的样子！",
+		"熟男：好吧好吧，我叫“熟男”，以后就带带你好了。",
+		"我：我叫“猪脚”，我才不要你带呢！",
+		"熟男：好好好，我要弹钢琴了，你去见见其他的室友把。"
 	};
 	//current index
 	private int dialogIndex ;
@@ -48,12 +57,10 @@ public class gym_roommate_premature : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (gym_protagonist.roommate_premature_turn_right) {
-			spriteRenderer.sprite = direction[2];		
-		}
-		//talk
-		if (distance_x < 0.5 && distance_x > -0.5f && Input.GetKeyDown (KeyCode.Space) && distance_y < 0.5) {
 
+		//talk
+		if (distance_x < 0.8 && distance_x > -0.8f && Input.GetKeyDown (KeyCode.Space) && distance_y < 1) {
+			
 			//ui
 			isTalk = true;
 			global_data.openUI = false;
@@ -65,7 +72,7 @@ public class gym_roommate_premature : MonoBehaviour {
 			dialogIndex ++ ;
 			
 			
-			if(dialogIndex == 2){
+			if(dialogIndex == 11){
 				isTalk = false;
 				global_data.openUI = true;
 				Time.timeScale = 1;

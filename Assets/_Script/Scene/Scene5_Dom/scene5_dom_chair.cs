@@ -2,18 +2,20 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class gym_roommate_premature : MonoBehaviour {
+public class scene5_dom_chair : MonoBehaviour {
 	public bool isTalk;
-	public Sprite[] direction;
-	private SpriteRenderer spriteRenderer;
 	private GameObject protagonist;
 	private float distance_x ;
 	private float distance_y ;
 	
 	//dialog
 	private string[] dialog= {
-		"路人甲：没看见着火了么？快来一起帮忙！",
-		"我：这个人看着好成熟。"
+		"我：看来这里就是我的床位，先收拾一下把。",
+		"两个小时过去了。。。",
+		"我：啊，好了，看起来收拾的差不多了呢。",
+		"我：先去熟悉熟悉校园把~",
+		"我：对了好像有点饿，要找到【食堂】吃饭。"
+			
 	};
 	//current index
 	private int dialogIndex ;
@@ -24,9 +26,8 @@ public class gym_roommate_premature : MonoBehaviour {
 	public Texture TalkIcon;
 	// Use this for initialization
 	void Start () {
-		spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
 		
-		protagonist = GameObject.Find ("protagonist");
+		protagonist = GameObject.Find ("character/protagonist");
 		
 		isTalk = false;
 		//get text
@@ -48,30 +49,29 @@ public class gym_roommate_premature : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (gym_protagonist.roommate_premature_turn_right) {
-			spriteRenderer.sprite = direction[2];		
-		}
 		//talk
-		if (distance_x < 0.5 && distance_x > -0.5f && Input.GetKeyDown (KeyCode.Space) && distance_y < 0.5) {
-
+		if (distance_x < 1.2 && distance_x > -1.2f && Input.GetKeyDown (KeyCode.Space) && distance_y < 0.5 && distance_y>-0.5f) {
+			
 			//ui
 			isTalk = true;
 			global_data.openUI = false;
-			//direction
-			spriteRenderer.sprite = direction[0];
+
 			//pause
 			Time.timeScale = 0;
 			//dialog
 			dialogIndex ++ ;
 			
 			
-			if(dialogIndex == 2){
+			if(dialogIndex == 5){
 				isTalk = false;
+				scene5_dom_protagonist.doorOpen = true;
 				global_data.openUI = true;
 				Time.timeScale = 1;
 				dialogIndex = -1;
 				//cost
-				global_data.addMinute(5);
+				global_data.addMinute(125);
+				global_data.subStamina(15);
+
 			}
 			else{
 				NPCtext.text = dialog[dialogIndex];	
@@ -95,4 +95,5 @@ public class gym_roommate_premature : MonoBehaviour {
 			GUI.Label(textRect,NPCtext.text.ToString(),textStyle);
 		}
 	}
+
 }
