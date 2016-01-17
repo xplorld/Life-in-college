@@ -35,6 +35,10 @@ public class UI_Option : MonoBehaviour {
 		sw.WriteLine (global_data.Relationship_Girlfriend3);
 		sw.WriteLine (global_data.Relationship_Girlfriend4);
 
+		sw.WriteLine (global_data.minigame_count);
+		sw.WriteLine (global_data.ball_shoot_count);
+		sw.WriteLine (global_data.oscilloscope_count);
+
 		sw.WriteLine (global_data.Time_Day);
 		sw.WriteLine (global_data.Time_Hour);
 		sw.WriteLine (global_data.Time_Minute);
@@ -76,6 +80,11 @@ public class UI_Option : MonoBehaviour {
 			global_data.Relationship_Girlfriend2 = int.Parse(sr.ReadLine());
 			global_data.Relationship_Girlfriend3 = int.Parse(sr.ReadLine());
 			global_data.Relationship_Girlfriend4 = int.Parse(sr.ReadLine());
+
+			global_data.minigame_count = int.Parse(sr.ReadLine());
+			global_data.ball_shoot_count =  int.Parse(sr.ReadLine());
+			global_data.oscilloscope_count =  int.Parse(sr.ReadLine());
+
 			
 			global_data.Time_Day = int.Parse(sr.ReadLine());
 			global_data.Time_Hour = int.Parse(sr.ReadLine());
@@ -224,7 +233,12 @@ public class UI_Option : MonoBehaviour {
 		            myButtonStyle2);
 
 	}
+	void checkAchievements () {
+		global_data.Achievement_Now [0] = Mathf.Min(20,global_data.minigame_count * 4);
+		global_data.Achievement_Now [1] =  Mathf.Min(20,global_data.ball_shoot_count * 10);
+		global_data.Achievement_Now [2] = global_data.oscilloscope_count > 0 ? 20 : 0;
 
+	}
 	void UI_Option_Achievement() {
 
  		float Width = Screen.width;
@@ -239,6 +253,8 @@ public class UI_Option : MonoBehaviour {
 			at = "Menu";
 		}
 
+		checkAchievements ();
+
 		for(int i=0;i!=5;++i) {
 			
 			button_pos = new Rect(Width*1/8, Height*(1+2*i)/13-Height_Adjust, buttonWidth, buttonHeight);
@@ -251,7 +267,8 @@ public class UI_Option : MonoBehaviour {
 			} else if (global_data.Achievement_Now[i] < 20) {
 				GUI.Label (button_pos,
 				            global_data.Achievement_title[i] + "（进行中）\n" +
-				            (global_data.Achievement_hide[i] ? "???" : (global_data.Achievement_content_head[i] + global_data.Achievement_Now[i] + "/" + global_data.Achievement_content_tail[i])),
+//				            (global_data.Achievement_hide[i] ? "???" : (global_data.Achievement_content_head[i] + global_data.Achievement_Now[i] + "/" + global_data.Achievement_content_tail[i])),
+				           (global_data.Achievement_hide[i] ? "???" : (global_data.Achievement_content_head[i] + global_data.Achievement_content_tail[i])),
 				            myButtonStyle2);
 			} else {
 				GUI.Label (button_pos,

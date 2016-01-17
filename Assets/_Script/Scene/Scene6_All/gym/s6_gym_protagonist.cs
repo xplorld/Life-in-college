@@ -149,7 +149,6 @@ public class s6_gym_protagonist : MonoBehaviour {
 				if (rb.position.x > -1.0f && rb.position.x < 1.0f && rb.position.y > -1.1f) {
 					global_data.addMinute(20);
 					global_data.subStamina(3);
-					global_data.Place_Scene = "体育馆";
 					Application.LoadLevel("Minigame_basketball");
 				}
 			} 

@@ -10,13 +10,16 @@ public class minigame_lab_sinRenderer : MonoBehaviour {
 	public float amplitude = 1;
 	public Color lineColor {
 		set {
+			if (lineRenderer != null) {
 			lineRenderer.SetColors (value, value);
+			}
 		}
 	}
 	private LineRenderer lineRenderer;
 	private float period = 2;
 	void Start() {
-		lineRenderer = GetComponent<LineRenderer> ();
+		GameObject lineObj = new GameObject("DragLine", typeof(LineRenderer));
+		lineRenderer = lineObj.GetComponent<LineRenderer>();
 		lineColor = Color.green;
 		lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
 		lineRenderer.SetVertexCount(vertexNumber);

@@ -30,6 +30,8 @@ public class global_data : MonoBehaviour {
 	static public int Place_Y;
 
 	static public int ball_shoot_count = 0;
+	static public int oscilloscope_count = 0;
+	static public int minigame_count = 0;
 
 	static public int Achievement_Count;
 	static public int[] Achievement_Now;
@@ -88,13 +90,13 @@ public class global_data : MonoBehaviour {
 					Achievement_hide = new bool[Achievement_Count];
 
 					Achievement_title[0] = "持之以恒";
-					Achievement_content_head[0] = "某小游戏玩过至少";
-					Achievement_content_tail[0] = "20次";
+					Achievement_content_head[0] = "小游戏玩过至少";
+					Achievement_content_tail[0] = "5次";
 					Achievement_hide[0] = false;
 
 					Achievement_title[1] = "神射手";
 					Achievement_content_head[1] = "篮球投篮";
-					Achievement_content_tail[1] = "10连中";
+					Achievement_content_tail[1] = "2中";
 					Achievement_hide[1] = false;
 
 					Achievement_title[2] = "搓轮高手";

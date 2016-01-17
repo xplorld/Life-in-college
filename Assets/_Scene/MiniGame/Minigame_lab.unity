@@ -93,7 +93,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 148416632}
-  - 120: {fileID: 148416631}
   - 114: {fileID: 148416630}
   - 114: {fileID: 148416633}
   m_Layer: 0
@@ -120,43 +119,6 @@ MonoBehaviour:
   endPoint: {x: -.200000003, y: 1}
   frequency: 1
   amplitude: 1
---- !u!120 &148416631
-LineRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 148416629}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  m_Parameters:
-    startWidth: 1
-    endWidth: 1
-    m_StartColor:
-      serializedVersion: 2
-      rgba: 4285988608
-    m_EndColor:
-      serializedVersion: 2
-      rgba: 4285988608
-  m_UseWorldSpace: 1
 --- !u!4 &148416632
 Transform:
   m_ObjectHideFlags: 0
@@ -193,7 +155,7 @@ GameObject:
   - 114: {fileID: 367866678}
   - 114: {fileID: 367866677}
   - 114: {fileID: 367866680}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +261,7 @@ GameObject:
   - 114: {fileID: 461376531}
   - 114: {fileID: 461376530}
   - 114: {fileID: 461376533}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RadialSliderImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +424,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 819495888}
-  - 120: {fileID: 819495887}
   - 114: {fileID: 819495886}
   m_Layer: 0
   m_Name: MySinRenderer
@@ -488,43 +449,6 @@ MonoBehaviour:
   endPoint: {x: -.200000003, y: 1}
   frequency: 1
   amplitude: 1
---- !u!120 &819495887
-LineRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 819495885}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  m_Parameters:
-    startWidth: 1
-    endWidth: 1
-    m_StartColor:
-      serializedVersion: 2
-      rgba: 4285988608
-    m_EndColor:
-      serializedVersion: 2
-      rgba: 4285988608
-  m_UseWorldSpace: 1
 --- !u!4 &819495888
 Transform:
   m_ObjectHideFlags: 0
@@ -637,7 +561,7 @@ GameObject:
   - 114: {fileID: 1325611635}
   - 114: {fileID: 1325611634}
   - 114: {fileID: 1325611637}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RadialSliderImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +652,7 @@ GameObject:
   - 224: {fileID: 1408846948}
   - 222: {fileID: 1408846950}
   - 114: {fileID: 1408846949}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: freq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +720,7 @@ GameObject:
   - 224: {fileID: 1428838957}
   - 222: {fileID: 1428838956}
   - 114: {fileID: 1428838955}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: amplitude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +827,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1590189914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .430000007, y: .0199999996, z: 0}
+  m_LocalPosition: {x: .430000007, y: .0199999996, z: 1}
   m_LocalScale: {x: .72640866, y: .72640866, z: .72640866}
   m_Children: []
   m_Father: {fileID: 0}

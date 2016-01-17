@@ -12,6 +12,7 @@ public class minigame_canteen_spawner : MonoBehaviour {
 	void Start () {
 		freeseats = new List<Collider2D> (table.GetComponentsInChildren<Collider2D> ());
 		InvokeRepeating ("addEnemy", 0, spawnTime);
+		global_data.minigame_count += 1;
 	}
 	
 	void addEnemy(){

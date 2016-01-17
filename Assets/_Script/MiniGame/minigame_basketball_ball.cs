@@ -15,7 +15,7 @@ public class minigame_basketball_ball : MonoBehaviour {
 
 		rigidBody = GetComponent<Rigidbody2D> ();
 		rigidBody.isKinematic = true;
-
+		global_data.minigame_count += 1;
 	}
 	
 //	// Update is called once per frame
