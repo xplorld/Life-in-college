@@ -35,7 +35,7 @@ public class s6_lab_protagonist : MonoBehaviour {
 	void Start () {
 		//boundary
 		boundaryH.xMin = -8.2f;
-		boundaryH.xMax = 7.9f;
+		boundaryH.xMax = 8.2f;
 		boundaryH.yMax = -2.0f;
 		boundaryH.yMin = -4.2f;
 		

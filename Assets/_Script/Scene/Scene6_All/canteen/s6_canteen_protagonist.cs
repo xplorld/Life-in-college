@@ -140,7 +140,7 @@ public class s6_canteen_protagonist : MonoBehaviour {
 					global_data.addMinute (20);
 					global_data.subStamina (1);
 					global_data.Place_Scene = "寝室楼";
-					global_data.canteen = 0;
+					global_data.domBuilding = 0;
 					Application.LoadLevel ("Scene_6_DomBuilding");//go to the next scene
 				}
 

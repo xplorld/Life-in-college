@@ -66,15 +66,15 @@ public class s6_gym_protagonist : MonoBehaviour {
 		if (setPos) {
 			if (global_data.gym == 1) {
 				rb.position = new Vector3 (
-					7.3f,
-					-3.3f,
+					8.7f,
+					-1.3f,
 					0.0f
 					);
 				standDirection = 1;
 			} else if (global_data.gym == 0) {
 				rb.position = new Vector3 (
-					-7.7f,
-					-3.3f,
+					-9.1f,
+					-1.3f,
 					0.0f
 					);
 				standDirection = 0;
@@ -128,7 +128,7 @@ public class s6_gym_protagonist : MonoBehaviour {
 					}
 				}
 
-				if(rb.position.x<-9.0f){
+				if(rb.position.x<-9.3f){
 					global_data.addMinute(20);
 					global_data.subStamina(1);
 					global_data.Place_Scene = "思远湖";
@@ -136,7 +136,7 @@ public class s6_gym_protagonist : MonoBehaviour {
 					Application.LoadLevel("Scene_6_Lake");//go to the next scene
 				}
 				
-				if (rb.position.x > 8.3f) {
+				if (rb.position.x > 9.2f) {
 					global_data.addMinute (20);
 					global_data.subStamina (1);
 					global_data.Place_Scene = "实验楼";

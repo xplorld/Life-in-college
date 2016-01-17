@@ -167,6 +167,14 @@ public class s6_domB_protagonist : MonoBehaviour {
 					global_data.canteen = 0;
 					Application.LoadLevel ("Scene_6_Canteen");//go to the next scene
 				}
+
+				if (rb.position.x > 8.0f) {
+					global_data.addMinute (20);
+					global_data.subStamina (1);
+					global_data.Place_Scene = "教学楼";
+					global_data.teachBuilding = 1;
+					Application.LoadLevel ("Scene_6_TeachingBuilding");//go to the next scene
+				}
 			
 			
 			} 

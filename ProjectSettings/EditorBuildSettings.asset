@@ -25,6 +25,10 @@ EditorBuildSettings:
     path: Assets/_Scene/Scene/Scene_6_Lab.unity
   - enabled: 1
     path: Assets/_Scene/Scene/Scene_6_Gym.unity
+  - enabled: 1
+    path: Assets/_Scene/Scene/Scene_6_Lake.unity
+  - enabled: 1
+    path: Assets/_Scene/Scene/Scene_6_TeachingBuilding.unity
   - enabled: 0
     path: Assets/_Scene/Scene/Scene_5_Dom.unity
   - enabled: 0
