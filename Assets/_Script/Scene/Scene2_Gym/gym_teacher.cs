@@ -42,7 +42,7 @@ public class gym_teacher : MonoBehaviour {
 		textStyle = new GUIStyle ();
 		textStyle.normal.background = null;
 		textStyle.normal.textColor = new Color(1, 1, 1);
-		textStyle.fontSize = 40;
+		textStyle.fontSize = 30;
 		//index
 		dialogIndex = -1;
 	}
